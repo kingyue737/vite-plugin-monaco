@@ -40,6 +40,7 @@
     "url": "https://github.com/kingyue737/vite-plugin-monaco/issues"
   },
   "scripts": {
+    "dev": "pnpm --filter playground dev",
     "build": "tsup src/index.ts --dts --format esm",
     "release": "bumpp",
     "changelog": ""

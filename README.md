@@ -27,11 +27,7 @@ export default defineConfig({
 - Runtime code:
 
 ```ts
-import * as monaco from 'monaco-editor';
-// 'monaco-editor' will be resolved to 'monaco-editor/esm/vs/editor/editor.api';
-// if shipping only a subset of the features & languages is desired
-import '~monaco/deps'
-import '~monaco/workers'
+import monaco from 'monaco-editor';
 
 monaco.editor.create(document.getElementById('container'), {
 	value: 'console.log("Hello, world")',
@@ -54,18 +50,6 @@ Options can be passed in to `vite-plugin-monaco`. They can be used to generate a
   | scss, less | css          |
 
 - `features` (`string[]`) - include only a subset of the editor features. By default, all features shipped with the `monaco-editor` will be included. Instead of enumerating included features, it is also possible to exclude certain default features prefixing them with an exclamation mark '!'.
-
-## Client Types
-
-If you want type definition of `~monaco/deps` and `~monaco/workers`, add `vite-plugin-monaco/client` to `compilerOptions.types` of your `tsconfig`:
-
-```json
-{
-  "compilerOptions": {
-    "types": ["vite-plugin-monaco/client"]
-  }
-}
-```
 
 ## License
 

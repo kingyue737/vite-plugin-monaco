@@ -1,6 +1,4 @@
-import * as monaco from 'monaco-editor';
-import '~monaco/deps'
-import '~monaco/workers'
+import monaco from 'monaco-editor';
 
 monaco.editor.create(document.getElementById('container')!, {
 	value: 'console.log("Hello, world")',
