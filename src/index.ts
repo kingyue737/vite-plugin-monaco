@@ -102,8 +102,21 @@ export default function (options?: Options): Plugin {
           const entry = workerPaths[lang]
           if (!entry) return
           const workerVar = `${lang}Worker`
-          workerImports.push(`import ${workerVar} from 'monaco-editor/esm/${entry}?worker'`)
+          workerImports.push(
+            `import ${workerVar} from 'monaco-editor/esm/${entry}?worker'`,
+          )
           workerAssignments.push(`workers['${lang}'] ??= ${workerVar}`)
+        })
+
+        options?.customLanguages?.forEach(({ label, entry, worker }) => {
+          languageImports.push(`import '${entry}'`)
+          if (worker) {
+            const workerVar = `${label}Worker`
+            workerImports.push(
+              `import ${workerVar} from '${worker.entry}?worker'`,
+            )
+            workerAssignments.push(`workers['${label}'] ??= ${workerVar}`)
+          }
         })
 
         const globalScript = `

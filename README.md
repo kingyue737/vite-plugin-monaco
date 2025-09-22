@@ -27,12 +27,12 @@ export default defineConfig({
 - Runtime code:
 
 ```ts
-import monaco from 'monaco-editor';
+import monaco from 'monaco-editor'
 
 monaco.editor.create(document.getElementById('container'), {
-	value: 'console.log("Hello, world")',
-	language: 'javascript'
-});
+  value: 'console.log("Hello, world")',
+  language: 'javascript',
+})
 ```
 
 ## Options
