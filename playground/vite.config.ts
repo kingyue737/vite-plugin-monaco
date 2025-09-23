@@ -25,4 +25,9 @@ export default defineConfig({
       ],
     }),
   ],
+  optimizeDeps: {
+    include: [
+      'path-browserify', // This is to satisfy `yaml-language-server` used in `monaco-yaml`
+    ],
+  },
 })
