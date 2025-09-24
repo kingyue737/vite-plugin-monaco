@@ -16,13 +16,9 @@
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist",
-    "client.d.ts"
+    "dist"
   ],
   "exports": {
-    "./client": {
-      "types": "./client.d.ts"
-    },
     ".": {
       "import": {
         "types": "./dist/index.d.ts",
