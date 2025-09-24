@@ -1,4 +1,4 @@
-# vite-plugin-monaco
+# vite-plugin-monaco (Draft)
 
 [![npm version](https://img.shields.io/npm/v/vite-plugin-monaco)](https://www.npmjs.com/package/vite-plugin-monaco)
 [![npm downloads](https://img.shields.io/npm/dm/vite-plugin-monaco)](https://www.npmjs.com/package/vite-plugin-monaco)
@@ -50,6 +50,8 @@ Options can be passed in to `vite-plugin-monaco`. They can be used to generate a
   | scss, less | css          |
 
 - `features` (`string[]`) - include only a subset of the editor features. By default, all features shipped with the `monaco-editor` will be included. Instead of enumerating included features, it is also possible to exclude certain default features prefixing them with an exclamation mark '!'.
+
+- `customLanguages` (`{label:string; entry:string; worker:{id:string, entry:string} }[]`) - Incorporate with 3rd party language worker.
 
 ## License
 
